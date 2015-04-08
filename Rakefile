@@ -6,6 +6,8 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
+if Rails.env == 'test'
+  RSpec::Core::RakeTask.new(:spec)
+end
 
 task :default  => :spec
