@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rspec'
   gem 'factory_girl'
   gem 'capybara'
+  gem 'simplecov', :require => false
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
