@@ -1,3 +1,4 @@
+![logo](app/assets/images/nightfury.jpg)
 # NightFury-Overflow
 ##Team NightFury
 ##Members: [Jan Fury](http://github.com/jannypie), [Dan Fury](http://github.com/mdmartinez), [Tirthan Fury](http://github.com/theidlemonk)
@@ -29,7 +30,7 @@
     - see best answer first, followed by most-voted answers
     - respond to a question
     - see most recent questions first
-    - respond to an answer 
+    - respond to an answer
     - vote on questions
     - vote on answers
     - vote best answer to my question
@@ -38,4 +39,12 @@
       - highest-voted
       - most recent
       - trending
-      
+
+###Wireframes
+![Index](app/assets/images/nightfury-mockups/home.png)
+---
+![User](app/assets/images/nightfury-mockups/user_show.png)
+---
+![Question](app/assets/images/nightfury-mockups/question_show.png)
+---
+![Generic](app/assets/images/nightfury-mockups/generic_page.png)
