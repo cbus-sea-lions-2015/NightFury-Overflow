@@ -53,3 +53,8 @@
 ![screenshot](app/assets/images/styleguide.jpg)
 <p data-height="268" data-theme-id="13917" data-slug-hash="azgooq" data-default-tab="result" data-user="jannypie" class='codepen'>See the Pen <a href='http://codepen.io/jannypie/pen/azgooq/'>Visual Style Guide</a> by jan dennison (<a href='http://codepen.io/jannypie'>@jannypie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
+
+###Links
+[TravisCI](https://travis-ci.org/cbus-sea-lions-2015/NightFury-Overflow)  
+[Heroku dashboard](https://dashboard.heroku.com/apps/nightfury-overflow/activity)  
+[Show me the fury](https://nightfury-overflow.herokuapp.com/)
