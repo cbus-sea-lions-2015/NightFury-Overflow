@@ -10,3 +10,7 @@ addons:
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database source_test;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake spec
