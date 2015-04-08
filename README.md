@@ -2,6 +2,8 @@
 ##Team NightFury
 ##Members: [Jan Fury](http://github.com/jannypie), [Dan Fury](http://github.com/mdmartinez), [Tirthan Fury](http://github.com/theidlemonk)
 
+### Overview: This repo attempts to mimick the behavior of the Q&A site StackOverflow.
+
 ###MVP:
   - Meet challenge objectives as our MVP
   - Follow Sandi Metz' Code Rules as general guides, refactor to fit if time allows
