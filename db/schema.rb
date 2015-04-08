@@ -21,8 +21,7 @@ ActiveRecord::Schema.define(version: 20150408162044) do
     t.string   "password_digest"
     t.string   "location"
     t.integer  "age"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
