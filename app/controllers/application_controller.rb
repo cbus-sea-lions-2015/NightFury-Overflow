@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     unless logged_in?
-      redirect_to new_session_path, alert: "Please log in."
+      redirect_to new_sessions_path, alert: "Please log in."
       return false
     end
   end
