@@ -1,7 +1,7 @@
 
 
 <% if session[:user_id] %>
-  <button><%= link_to "My Account", user_path(session[:user_id]) %></button>
+  <button><%= link_to "My Account", profile_path %></button>
   <button><%= link_to "Logout", logout_path %></button>
 <% else %>
   <button><%= link_to "Login", login_path %></button>

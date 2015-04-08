@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   
   root 'users#index'
   
-  resources :users
+  resources :users, except: [:show]
+  get '/profile' => "users#show"
   resource :sessions, only: [:new, :create, :destroy]
 
   get '/signup', to: 'users#new'
