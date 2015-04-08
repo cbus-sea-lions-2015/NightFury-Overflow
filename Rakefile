@@ -6,7 +6,7 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 desc "Run the specs"
-if Rails.env == 'test' && Rails.env == 'development'
+if  Rails.env == "development" || Rails.env == "test"
   RSpec::Core::RakeTask.new(:spec)
 end
 
