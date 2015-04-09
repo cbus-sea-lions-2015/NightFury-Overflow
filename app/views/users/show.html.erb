@@ -21,6 +21,6 @@
   </tr>
 </table>
 
-<button><%= link_to "Edit Account Information", edit_user_path(@user) %></button>
+<%= link_to "Edit Account Information", edit_user_path(@user), class: "button" %>
 
-<button><%= link_to "Delete Account", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %></button>
+<%= link_to "Delete Account", user_path(@user), method: :delete, class: "button",data: {confirm: "Are you sure?"} %>

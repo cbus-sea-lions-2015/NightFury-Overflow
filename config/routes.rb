@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  root 'users#index'
   
+  root 'users#index'
+  # resources :answers
   resources :users, except: [:show]
   get '/profile' => "users#show"
   resource :sessions, only: [:new, :create, :destroy]
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   get '/login', to: 'sessions#new'
-  
+
   get '/logout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
