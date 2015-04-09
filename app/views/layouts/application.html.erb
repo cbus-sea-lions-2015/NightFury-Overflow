@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NightFury Overflow</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= favicon_link_tag 'favicon.png' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <% if session[:user_id] %>
+      <%= link_to "My Account", profile_path, class: "button" %>
+      <%= link_to "Log Out", logout_path, class: "button" %>
+    <% else %>
+      <%= link_to "Log In", login_path, class: "button" %>
+      <%= link_to "Sign Up", signup_path, class: "button" %>
+    <% end %>
+  </nav>
+  <div class="container">
+    <header>
+      <%= image_tag('nightfury.jpg') %><h1 class="logo-text"><span class="logo-light">NightFury</span><span class="logo-heavy">Overflow</span></h1>
+    </header>
+    <%= yield %>
+    <footer>
+      <hr>
+      <p><%= image_tag('toothless.gif') %> by <a href="http://devbootcamp.com/" title="devbootcamp">devbootcamp</a> students <a href="http://github.com/jannypie" title="jan dennison">Jan Fury</a>, <a href="http://github.com/mdmartinez" title="daniel martinez">Dan Fury</a>, <a href="http://github.com/theidlemonk" title="tirthankar">Tirthan Fury</a></p>
+    </footer>
+  </div>
+</body>
+</html>

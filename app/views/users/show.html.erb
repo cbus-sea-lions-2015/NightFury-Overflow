@@ -1,0 +1,26 @@
+<h1>Hello <%= current_user.name %>!</h1>
+<p class="success" id="notice"><%= notice %></p>
+<h2>Account Information</h2>
+<hr>
+<table>
+  <tr>
+    <td>Name</td>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td>Location</td>
+    <td><%= @user.location %></td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td><%= @user.age %></td>
+  </tr>
+</table>
+
+<%= link_to "Edit Account Information", edit_profile_path, class: "button" %>
+
+<%= link_to "Delete Account", profile_path, method: :delete, class: "button",data: {confirm: "Are you sure?"} %>

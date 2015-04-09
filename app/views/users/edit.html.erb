@@ -1,0 +1,18 @@
+<h2>Update Information</h2>
+
+<%= form_for @user, url: profile_path, method: :put  do |f| %>
+  <%= render 'error' %>
+  
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name, placeholder: "Name", autofocus: true, value: @user.name %> <br>
+  <%= f.label :password, "Password" %>
+  <%= f.password_field :password, placeholder: "Password", value: @user.password %> <br>
+  <%= f.label :email, "Email" %>
+  <%= f.text_field :email, placeholder: "Email", value: @user.email  %> <br>
+  <%= f.label :location, "Location" %>
+  <%= f.text_field :location, placeholder: "Location", value: @user.location %> <br>
+  <%= f.label :age, "Age" %>
+  <%= f.text_field :age, placeholder: "Age", value: @user.age %> <br>
+  
+  <%= f.submit "Submit Changes", :disable_with => 'Submiting...' %>
+<% end %>
