@@ -9,5 +9,9 @@
 
 <% @question.answers.each do |answer| %>
   <%= render 'answer/show', answer: answer %>
+  <!-- partial for showing Answer comments -->
+  <% answer.comments.each do |comment| %>
+    <%= render 'comments/show', comment: comment %>
+  <% end %>
 <% end %>
 
