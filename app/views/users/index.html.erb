@@ -1,13 +1,3 @@
-
-
-<% if session[:user_id] %>
-  <button><%= link_to "My Account", profile_path %></button>
-  <button><%= link_to "Logout", logout_path %></button>
-<% else %>
-  <button><%= link_to "Login", login_path %></button>
-  <button><%= link_to "Sign Up", signup_path %></button>
-<% end %>
-
 <h3>Users</h3>
 
 <hr>
