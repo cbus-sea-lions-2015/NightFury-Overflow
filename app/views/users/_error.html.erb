@@ -1,8 +1,9 @@
 <% if @user.errors.any? %>
-  <h3><%= pluralize(@user.errors.count, "error") %></h3>
+  <h3><%= pluralize(@user.errors.count, "error") %> prohibited your account from being created:</h3>
   <ul>
-    <% @user.errors.full_messages do |msg| %>
-      <li><%= msg %></li>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li class="error"><%= msg %></li>
+
       <% end %>
   </ul>
   <% end %>

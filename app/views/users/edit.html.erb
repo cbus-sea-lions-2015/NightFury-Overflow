@@ -1,6 +1,6 @@
 <h2>Update Information</h2>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: profile_path, method: :put  do |f| %>
   <%= render 'error' %>
   
   <%= f.label :name, "Name" %>
