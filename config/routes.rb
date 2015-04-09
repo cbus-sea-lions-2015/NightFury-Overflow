@@ -11,23 +11,6 @@ Rails.application.routes.draw do
 
   root to: 'users#index'
 
-  # resources :users, except: [:show]
-  # get '/profile' => "users#show"
-
-  # get '/users' => "users#index"
-  # get '/users/new' => "users#new"
-  # post '/users' => "users#create"
-
-
-  # get '/profile' => "users#show"
-  # get '/profile/edit' => "users#edit"
-  # put '/profile' => "users#update"
-  # delete '/profile' => "users#destroy"
-
-
-
->>>>>>> 657bad6e1542bebbf1b32085d16d7598e25bb145
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
