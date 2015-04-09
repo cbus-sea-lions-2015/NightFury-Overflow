@@ -12,7 +12,8 @@ describe UsersController do
 
   describe "GET #show" do
     it "assigns the requested user as @user" do
-      get :show, { user_id: user.to_param }
+      user = User.first
+      get :show, { user: user }
       expect(assigns(:user)).to eq(user)
     end
   end
