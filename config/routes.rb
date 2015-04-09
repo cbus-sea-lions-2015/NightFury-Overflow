@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  
   root 'users#index'
+  resources :questions
   # resources :answers
   resources :users, except: [:show]
   get '/profile' => "users#show"
