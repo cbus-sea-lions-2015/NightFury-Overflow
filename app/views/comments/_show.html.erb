@@ -1,0 +1,7 @@
+<div class="comment comment-<%= comment.id %>">
+  <p class="comment-body"><%= comment.body %></p>
+  <p class="meta"><%= comment.user.name %> on <%= comment.created_at.strftime("%B %d, %Y") %></p>
+  <% if comment.user == current_user %>
+  <p><%= link_to "Edit", edit_comment_path(comment) %> | <%= link_to "Delete", delete(comment) %></p>
+  <% end %>
+</div>
