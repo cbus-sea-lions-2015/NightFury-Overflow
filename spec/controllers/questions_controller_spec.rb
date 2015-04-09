@@ -10,7 +10,7 @@ RSpec.describe QuestionsController, type: :controller do
       expect(assigns(questions)).to eq(@questions)
     end
   end
-  
+
   describe "GET #show" do
     it 'displays the question' do
       question = Question.create!(title: "Why this title?" , body:"I want to know why this title.", user: User.first)
@@ -19,5 +19,26 @@ RSpec.describe QuestionsController, type: :controller do
     end
   end
 
+  describe "GET #new" do
+    it 'displays a form for adding question' do
+      get :new
+      expect(assigns(Question.new)).to eq(@question)
+    end
+  end
+
+  describe "POST #create" do
+  let!(:user) { User.create(email: "batman@batman.com", password:"batman") }
+  let(:default_session) { {user_id: user.id} }
+    it 'should add a new question' do
+      expect { 
+        post :create, 
+          {question: {
+            title: "Why this title?",
+            body:"I want to know why this title."
+          }},
+          default_session
+      }.to change(Question, :count).by(1)
+    end
+  end
 
 end
