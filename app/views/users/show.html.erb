@@ -1,5 +1,5 @@
 <h1>Hello <%= current_user.name %>!</h1>
-<p id="notice"><%= notice %></p>
+<p class="success" id="notice"><%= notice %></p>
 <h2>Account Information</h2>
 <hr>
 <table>
@@ -21,6 +21,6 @@
   </tr>
 </table>
 
-<%= link_to "Edit Account Information", edit_user_path(@user), class: "button" %>
+<%= link_to "Edit Account Information", edit_profile_path, class: "button" %>
 
-<%= link_to "Delete Account", user_path(@user), method: :delete, class: "button",data: {confirm: "Are you sure?"} %>
+<%= link_to "Delete Account", profile_path, method: :delete, class: "button",data: {confirm: "Are you sure?"} %>
