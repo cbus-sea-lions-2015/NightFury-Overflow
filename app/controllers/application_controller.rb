@@ -5,10 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate
   skip_before_action :authenticate, only: [:index]
 
-  def index
-    # @questions = Question.order("created_at DESC")
-  end
-
   def current_user
     @user ||= User.find(session[:user_id]) if session[:user_id]
   end

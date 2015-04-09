@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'application#index'
+  root 'users#index'
 
   resources :users, except: [:show]
   get '/profile' => "users#show"
