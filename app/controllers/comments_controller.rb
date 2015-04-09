@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def destroy
     comment = current_user.comments.find_by(id: params[:id], commentable: @commentable)
     comment.destroy
-    redirect_to root_path
+    redirect_to @commentable
   end
 
   private
@@ -27,6 +27,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :user, :commentable)
+    params.require(:comment).permit(:body)
   end
 end

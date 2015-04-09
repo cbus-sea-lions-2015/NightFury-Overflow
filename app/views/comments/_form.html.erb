@@ -1,7 +1,9 @@
-<% form_for @comment do |f| -%>
-  <fieldset>
-    <%= f.label :body, "Body" %>
-    <%= f.text_area :body, autofocus: true, value: @comment.body %>
-  </fieldset>
-  <%= f.submit, :disable_with => 'Submiting...' %>
-<% end -%>
+<% if @question %>
+  <%= form_for :comment, url: question_comments_path(@question) do |f| %>
+    <fieldset>
+      <%= f.label :body, "Add Comment" %>
+      <%= f.text_area :body, autofocus: true, value: comment.body %>
+    </fieldset>
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+  <% end %>
+<% end %>

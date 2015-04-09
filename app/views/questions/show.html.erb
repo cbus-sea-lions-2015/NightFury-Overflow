@@ -5,3 +5,8 @@
 <% @question.comments.each do |comment| %>
 <%= render 'comments/show', comment: comment %>
 <% end %>
+
+<!-- partial for adding question comment -->
+<% if logged_in? %>
+<%= render 'comments/form', comment: Comment.new, question: @question %>
+<% end %>
