@@ -4,6 +4,10 @@
 
 <!-- partial for showing question comments -->
 <% @question.comments.each do |comment| %>
-<%= render 'comments/show', comment: comment %>
+  <%= render 'comments/show', comment: comment %>
+<% end %>
+
+<% @question.answers.each do |answer| %>
+  <%= render 'answer/show', answer: answer %>
 <% end %>
 
