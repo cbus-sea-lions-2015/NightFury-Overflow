@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resource :profile, except: [:new, :create], controller: "users"
   resources :answers
 
+   get '/signup', to: 'users#new'   
+   get '/login', to: 'sessions#new'   
+   get '/logout', to: 'sessions#destroy'
+   
   # resources :answers
 
   resources :comments, except: [:show]
