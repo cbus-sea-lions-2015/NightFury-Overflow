@@ -1,6 +1,11 @@
+<ol>
 <% @questions.each do |question| %>
+<li>
  <p>
-   <%= question.title %>
+   <%= link_to question.title , question_path(question) %>
+   <p class="meta">Posted by <%= question.user.name %> on <%= question.created_at.strftime("%B %d, %Y") %></p>
  </p>
+</li>
  <hr>
 <% end %>
+</ol>
