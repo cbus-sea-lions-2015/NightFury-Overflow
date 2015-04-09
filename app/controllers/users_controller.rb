@@ -10,10 +10,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.create(user_params)
-    if @user.save 
+    @user = User.new(user_params)
+    if @user.save
       session[:user_id] = @user.id
-      redirect_to profile_path(@user)
+      redirect_to profile_path, notice: 'Account was successfully created.'
     else
       render :new
     end
@@ -24,9 +24,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(params[:user].permit(:email, :password, :name, :location, :age))
-      redirect_to user_path
+    @user = User.find(session[:user_id])
+    if @user.update_attributes(profile_params)
+      redirect_to profile_path
     else
       render :edit
     end
@@ -47,6 +47,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :name)
+  end
+
+  def profile_params
+    params.require(:user).permit(:email, :password, :location, :age, :name)
   end
 
 end
