@@ -3,4 +3,7 @@
    <%= question.title %>
  </p>
  <hr>
+ <% question.comments.each do |comment| %>
+  <%= render 'comments/show', comment: comment %>
+ <% end %>
 <% end %>
