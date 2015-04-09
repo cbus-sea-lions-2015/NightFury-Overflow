@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  resources :comments
   root 'users#index'
   # resources :answers
   resources :users, except: [:show]
