@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:index, :new, :create]
   resource :profile, except: [:new, :create], controller: "users"
+  resources :questions  
   resources :answers
 
    get '/signup', to: 'users#new'   
