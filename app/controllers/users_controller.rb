@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate, only: [:index, :new]
+  skip_before_action :authenticate, only: [:index, :new, :create]
 
   def index
     @users = User.all
@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.create(user_params)
-    if @user.save
+    if @user.save 
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to profile_path(@user)
     else
       render :new
     end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(session[:user_id])
     @user.destroy
-    session[:user_id] = nil
+    session.delete(:user_id)
     redirect_to root_path
   end
 
