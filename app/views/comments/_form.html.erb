@@ -4,6 +4,14 @@
       <%= f.label :body, "Add Comment" %>
       <%= f.text_area :body, autofocus: true, value: comment.body %>
     </fieldset>
-    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <%= f.submit "Reply to question", :disable_with => 'Submiting...' %>
+  <% end %>
+<% elsif @answer %>
+  <%= form_for :comment, url: question_answer_comments_path(@answer) do |f| %>
+    <fieldset>
+      <%= f.label :body, "Add Comment" %>
+      <%= f.text_area :body, autofocus: true, value: comment.body %>
+    </fieldset>
+    <%= f.submit "Reply to answer", :disable_with => 'Submiting...' %>
   <% end %>
 <% end %>
