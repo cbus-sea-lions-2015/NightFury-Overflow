@@ -5,15 +5,15 @@ Rails.application.routes.draw do
   resource :profile, except: [:new, :create], controller: "users"
   resources :questions do
     resources :answers, only: [:create, :update, :destroy] do
-      resources :commments, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
       resources :votes, only: [:create, :destroy]
     end
-    resources :commments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
     resources :votes, only: [:create, :destroy]
   end
 
-   get '/signup', to: 'users#new'   
-   get '/login', to: 'sessions#new'   
+   get '/signup', to: 'users#new'
+   get '/login', to: 'sessions#new'
    get '/logout', to: 'sessions#destroy'
 
   root to: 'questions#index'
