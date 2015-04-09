@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :commments, only: [:create, :destroy]
     resources :votes, only: [:create, :destroy]
-    end
+  end
 
    get '/signup', to: 'users#new'   
    get '/login', to: 'sessions#new'   
