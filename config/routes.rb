@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :votes
   resource :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:index, :new, :create]
   resource :profile, except: [:new, :create], controller: "users"
