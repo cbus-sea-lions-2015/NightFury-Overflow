@@ -1,7 +1,17 @@
-<h1>  <% @question.title %> </h1>
-<p> <% @question.body %> </p>
+<h1>  <%= @question.title %> </h1>
+<p class="meta"><%= @question.user.name %> on <%= @question.created_at.strftime("%B %d, %Y") %> | <%= link_to "Edit" , edit_question_path(@question) %></p>
+<p> <%= simple_format(@question.body) %> </p>
 
 <!-- partial for showing question comments -->
 <% @question.comments.each do |comment| %>
-<%= render 'comments/show', comment: comment %>
+  <%= render 'comments/show', comment: comment %>
 <% end %>
+
+<% @question.answers.each do |answer| %>
+  <%= render 'answer/show', answer: answer %>
+  <!-- partial for showing Answer comments -->
+  <% answer.comments.each do |comment| %>
+    <%= render 'comments/show', comment: comment %>
+  <% end %>
+<% end %>
+
