@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $paleblue: #d3e2e5;
+$yellow: #f0e958;
+
 .questions-list {
   list-style-type: none;
   li {
@@ -18,7 +20,7 @@ $paleblue: #d3e2e5;
   position: absolute;
   right: 100%;
   overflow: auto;
-  width: 10em;
+  width: 11em;
   li {
     display: inline-block;
     font-size: 0.7em;
@@ -30,4 +32,51 @@ $paleblue: #d3e2e5;
     font-size: 3em;
     line-height: 1;
   }
+}
+
+.question-page {
+  margin-left: -5.5em;
+  right: initial;
+  width: 5em;
+  text-align: center;
+  margin-top: -2em;
+}
+
+.question-page form {
+  padding: 0;
+  margin: 0;
+}
+
+input.vote-button {
+  display: inline;
+  margin-left: -3em;
+  font-size: .5em;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+input.vote-button:hover {
+  background: transparent;
+  
+}
+
+input.down {
+  border: 20px solid transparent;
+  border-bottom: 0;
+  border-top-color: $paleblue;
+}
+
+input.down:hover {
+  border-top-color: $yellow;
+}
+
+input.up {
+  border: 20px solid transparent;
+  border-top: 0;
+  border-bottom-color: $paleblue;
+}
+
+input.up:hover {
+  border-bottom-color: $yellow;
 }

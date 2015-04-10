@@ -1,2 +1,6 @@
-<%= button_to "Vote", form_path, method: 'post', params: {direction: 1} %>
-<%= button_to "Downote", form_path, method: 'post', params: {direction: -1} %>
+<% target = answer ? answer : @question %>
+<ul class="question-stats question-page"> 
+  <li> <%= button_to "", form_path, class: 'vote-button up', method: 'post', params: {direction: 1} %></li>
+  <li> <span><%= target.votes.sum("direction") %></span>votes</li>
+  <li> <%= button_to "", form_path, class: 'vote-button down', method: 'post', params: {direction: -1} %></li>
+</ul>
