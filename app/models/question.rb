@@ -1,7 +1,4 @@
 class Question < ActiveRecord::Base
-  scope :most_votes, ->() { joins(:votes).group("questions.id").order("sum(votes.value) DESC").sum("votes.value") }
-  # scope :most_votes, ->() { joins(:votes).group("questions.id").order("sum(votes.up)").map {|q| q.votes.sum(:up) }
-
   scope :vote_order, ->() { joins(:votes).group("questions.id").order("sum(votes.direction) DESC") }
   scope :comment_order, ->() { joins(:comments).group("questions.id").order("count(comments) DESC") }
 
@@ -10,5 +7,9 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
+
+  def sort_answers
+    self.answers.joins(:votes).group('answers.id,best').order('best DESC, sum(votes.direction) DESC ')
+  end
 
 end

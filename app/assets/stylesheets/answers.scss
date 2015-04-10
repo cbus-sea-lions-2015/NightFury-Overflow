@@ -1,3 +1,16 @@
 // Place all the styles related to the Answers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$yellow: #f0e958;
+$green: #216855;
+
+.best-answer {
+  width: 20px;
+  height: 20px;
+  background: $green;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -3.3em;
+  margin-top: -3em;
+}
