@@ -22,6 +22,11 @@
   <div class="container">
     <header>
       <%= image_tag('nightfury.jpg') %><h1 class="logo-text"><span class="logo-light">NightFury</span><span class="logo-heavy">Overflow</span></h1>
+
+    <div class="question-sort">
+      <%= link_to "Trending", {:controller => "questions", :action => "index", :sort_order => "commented" }, class: "button" %>
+      <%= link_to "Top Voted", {:controller => "questions", :action => "index", :sort_order => "voted" }, class: "button" %>
+    </div>
     </header>
     <%= yield %>
     <footer>
