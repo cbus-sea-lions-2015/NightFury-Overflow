@@ -53,13 +53,15 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe "PUT #update" do
     pending
-    # it 'updates the question and sends you back to show' do
-    #   question = Question.create!(title: "Why this title?",
-    #                               body:"I want to know why this title.", user: user)
-    #   put :update, id: question, question: { title: "Changed Title", body:"I want to know why this title."}
-    #   edited_question = Question.find(question.id)
-    #   expect(edited_question.title).to eq("Changed Title")
-    # end
+    it 'updates the question and sends you back to show' do
+      question = Question.create!(title: "Why this title?",
+                                  body:"I want to know why this title.", user: user)
+      expect { 
+        put :update, {
+        id: question, 
+        question: { title: "Changed Title", body:"I want to know why this title."}
+        }, default_session }.to change{ Question.find(question.id).title }.to("Changed Title")
+    end
   end
 
 end

@@ -11,7 +11,11 @@
 <% if logged_in? %>
 <%= render 'comments/form', comment: Comment.new, answer: nil %>
 <% end %>
+<% if logged_in? %>
+  <%= render 'answers/new' %>
+<% end %>
 <h3>Answers</h3>
+<hr>
 <% @question.answers.each do |answer| %>
   <%= render 'answers/show', answer: answer %>
   <!-- partial for showing Answer comments -->

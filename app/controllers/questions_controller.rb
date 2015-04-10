@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  skip_before_action :authenticate, only: [:show, :index]
 
   def index
     @questions = Question.order(created_at: :desc)
