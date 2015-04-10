@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-RSpec.feature "User visits page without login in" do
+RSpec.feature "User visits page without login in", type: :feature do
   before :each do
     visit '/logout'
   end

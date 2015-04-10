@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to profile_path
     else
-      render :new, alert: "Incorrect username or password."
+      # render :new, alert: "Incorrect username or password."
+      redirect_to login_path, alert: "Incorrect username or password."
     end
   end
 
