@@ -5,6 +5,9 @@
    <%= link_to question.title , question_path(question) %>
    <p class="meta">Posted by <%= question.user.name %> on <%= question.created_at.strftime("%B %d, %Y") %></p>
  </p>
+ <div class="votes">
+   Votes <%= question.votes.sum("direction") %>
+ </div>
   <!-- partial for showing question vote form -->
   <% if logged_in? %>
     <%= render partial: 'votes/form', locals: {form_path: question_votes_path(question)} %>
