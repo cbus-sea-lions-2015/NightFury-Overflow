@@ -7,8 +7,10 @@ class AnswersController < ApplicationController
   end
 
 private
-def answer_params
-  params.require(:answer).permit(:body)
-end
+  def answer_params
+    params.require(:answer).permit(:body)
+  end
+
+  
 
 end
