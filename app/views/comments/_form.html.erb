@@ -1,7 +1,6 @@
 <% @comment = Comment.new %>
 <% targets = answer ? [@question, answer, @comment] : [@question, @comment] %>
 <% reply_to = answer ? "answer" : "question" %>
-<%= targets %>
 <%= form_for targets do |f| %>
   <fieldset>
     <%= f.label :body, "Comment on this #{reply_to}" %>

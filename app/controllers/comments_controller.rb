@@ -11,8 +11,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    puts params
-    comment = current_user.comments.find_by(id: params[:id], commentable: @commentable)
+    comment = current_user.comments.find_by(id: params[:id])
+    puts "COMMENT #{comment}"
+    puts "question #{@question}"
+    puts "answer #{@answer}"
+    puts "COMMENTable #{@commentable}"
     comment.destroy
     redirect_to @question
   end
