@@ -122,7 +122,9 @@ textarea {
 .button.active, button.active, .button:hover, button:hover, input[type="submit"]:hover {
   background: $yellow;
   color: $dkblue;
-  color: $dkblue;
+}
+.button.active, button.active {
+  border: 1px solid $yellow;
 }
 input[type="submit"] {
   display: block;

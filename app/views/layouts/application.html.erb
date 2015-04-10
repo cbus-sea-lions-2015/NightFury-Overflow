@@ -22,9 +22,9 @@
     <header>
       <a href="/" title="home"><%= image_tag('nightfury.jpg') %><h1 class="logo-text"><span class="logo-light">NightFury</span><span class="logo-heavy">Overflow</span></h1></a>
       <div class="question-sort">
-        <%= link_to "Recent", root_path, class: "button small active" %>
-        <%= link_to "Trending", {:controller => "questions", :action => "index", :sort_order => "commented" }, class: "button small" %>
-        <%= link_to "Top Voted", {:controller => "questions", :action => "index", :sort_order => "voted" }, class: "button small" %>
+        <%= link_to "Recent", root_path, class: "recent button small active" %>
+        <%= link_to "Trending", {:controller => "questions", :action => "index", :sort_order => "commented" }, class: "trending button small" %>
+        <%= link_to "Top Voted", {:controller => "questions", :action => "index", :sort_order => "voted" }, class: "top-voted button small" %>
       </div>
     </header>
     <%= yield %>
