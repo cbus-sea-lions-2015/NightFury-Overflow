@@ -1,6 +1,6 @@
 class Answer < ActiveRecord::Base
-  # scope :best_answer, ->() { joins(:votes).group("answers.id").sum("votes.value") }
-
+  # scope :best_order ->() { joins(:votes).group('answers.id,best').order('best,sum(votes.direction)') }
+  
   belongs_to :user
   belongs_to :question
   has_many :comments, as: :commentable
