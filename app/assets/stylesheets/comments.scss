@@ -1,3 +1,19 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$paleblue: #d3e2e5;
+
+.comment {
+  margin-left: 5em;
+  font-size: 0.9em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid $paleblue;
+}
+.comment p {
+  margin: 0.5em;
+}
+.new_comment {
+  padding-top: 0;
+  margin-left: 5em;
+}

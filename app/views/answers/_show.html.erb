@@ -1,1 +1,7 @@
-<p> <%= answer.body %> </p>
+<p><%= answer.body %></p>
+<p class="meta">
+  by <%= answer.user.name %> on <%= answer.created_at.strftime("%B %d, %Y") %>
+  <% if answer.user == current_user %>
+  | <%= link_to "Edit", edit_question_path(answer) %>
+  <% end %>
+</p>
