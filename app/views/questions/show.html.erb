@@ -21,7 +21,7 @@
 
 <h3>Answers</h3>
 <hr>
-<% @question.answers.each do |answer| %>
+<% @question.sort_answers.each do |answer| %>
   <!-- partial for showing answer vote buttons -->
   <% if logged_in? %>
     <%= render partial: 'votes/form', locals: {form_path: question_answer_votes_path(@question,answer), answer: answer} %>
