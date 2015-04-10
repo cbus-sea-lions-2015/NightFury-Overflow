@@ -2,28 +2,27 @@ class CommentsController < ApplicationController
   before_action :set_commentable
 
   def create
-    @comment = current_user.comments.new(comment_params.merge(commentable: @commentable))
+    @comment = @commentable.comments.new(comment_params.merge({user: current_user}))
     if @comment.save
-      redirect_to @commentable, notice: 'Comment saved.'
+      redirect_to @question
     else
-      redirect_to @commentable, notice: 'Comment not saved, try again.'
+      redirect_to @question, notice: 'Comment not saved, try again.'
     end
   end
 
   def destroy
+    puts params
     comment = current_user.comments.find_by(id: params[:id], commentable: @commentable)
     comment.destroy
-    redirect_to @commentable
+    redirect_to @question
   end
 
   private
 
   def set_commentable
-    @commentable = if params[:answer_id]
-      Answer.find_by(id: params[:answer_id], question_id: params[:question_id])
-    else
-      Question.find_by(id: params[:question_id])
-    end
+    @question = Question.find_by(id: params[:question_id])
+    @answer = Answer.find_by(id: params[:answer_id]) if params[:answer_id]
+    @commentable = @answer || @question
   end
 
   def comment_params
