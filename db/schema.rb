@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150409191201) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "value"
+    t.integer  "direction"
     t.boolean  "best"
     t.integer  "user_id"
     t.integer  "votable_id"

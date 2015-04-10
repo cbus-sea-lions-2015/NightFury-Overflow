@@ -1,28 +1,35 @@
-<h1>  <%= @question.title %> </h1>
+<h1><%= @question.title %></h1>
+<hr>
 <p class="meta"><%= @question.user.name %> on <%= @question.created_at.strftime("%B %d, %Y") %> | <%= link_to "Edit" , edit_question_path(@question) %></p>
 <p> <%= simple_format(@question.body) %> </p>
 
-<!-- partial for showing question vote form -->
-<% if logged_in? %>
-  <%= render 'votes/form', vote: Vote.new, answer: nil %>
-<% end %>
-
+<hr>
+<h4>Comments</h4>
 <!-- partial for showing question comments -->
 <% @question.comments.each do |comment| %>
   <%= render 'comments/show', comment: comment %>
 <% end %>
-
+<!-- partial for adding question comment -->
+<% if logged_in? %>
+<%= render 'comments/form', comment: Comment.new, answer: nil %>
+<% end %>
+<h4>Answers</h4>
+<hr>
 <% @question.answers.each do |answer| %>
   <%= render 'answers/show', answer: answer %>
 
   <!-- partial for showing answer vote form -->
   <% if logged_in? %>
-    <%= render :partial => 'votes/form', :locals => {:answer => answer} %>
+    <%= render partial: 'votes/form', locals: {form_path: question_answer_votes_path(@question,answer)} %>
   <% end %>
 
   <!-- partial for showing Answer comments -->
   <% answer.comments.each do |comment| %>
     <%= render 'comments/show', comment: comment %>
   <% end %>
-<% end %>
+  <hr>
+  <% if logged_in? %>
+  <%= render :partial => 'comments/form', :locals => {:answer => answer} %>
 
+  <% end %>
+<% end %>
