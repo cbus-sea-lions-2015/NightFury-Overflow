@@ -10,6 +10,7 @@
 <body>
   <nav>
     <% if session[:user_id] %>
+      <%= link_to "Ask Question", new_question_path, class: "button" %>
       <%= link_to "My Account", profile_path, class: "button" %>
       <%= link_to "Log Out", logout_path, class: "button" %>
     <% else %>
@@ -20,11 +21,10 @@
   <div class="container">
     <header>
       <a href="/" title="home"><%= image_tag('nightfury.jpg') %><h1 class="logo-text"><span class="logo-light">NightFury</span><span class="logo-heavy">Overflow</span></h1></a>
-      <div class="question-buttons">
-        <%= link_to "Questions", root_path, class: "button" %>
-        <% if session[:user_id] %>
-          <%= link_to "Ask Question", new_question_path, class: "button" %>
-        <% end %>
+      <div class="question-sort">
+        <%= link_to "Recent", root_path, class: "recent button small active" %>
+        <%= link_to "Trending", {:controller => "questions", :action => "index", :sort_order => "commented" }, class: "trending button small" %>
+        <%= link_to "Top Voted", {:controller => "questions", :action => "index", :sort_order => "voted" }, class: "top-voted button small" %>
       </div>
     </header>
     <%= yield %>

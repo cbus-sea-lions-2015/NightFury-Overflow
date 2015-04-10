@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   skip_before_action :authenticate, only: [:show, :index]
 
   def index
-    @questions = Question.order(created_at: :desc)
+    @questions = question_order(params[:sort_order] || "")
   end
 
   def show
@@ -31,5 +31,16 @@ class QuestionsController < ApplicationController
   private
   def question_params
    params.require(:question).permit(:title, :body)
+  end
+
+  def question_order(sort_order)
+    case sort_order
+    when "voted"
+      Question.vote_order
+    when "commented"
+      Question.comment_order
+    else
+      Question.order("created_at DESC")
+    end
   end
 end

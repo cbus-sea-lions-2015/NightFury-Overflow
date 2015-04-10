@@ -4,6 +4,7 @@
 $paleblue: #d3e2e5;
 .questions-list {
   list-style-type: none;
+  padding: 0;
   li {
     position: relative;
   }
@@ -18,7 +19,7 @@ $paleblue: #d3e2e5;
   position: absolute;
   right: 100%;
   overflow: auto;
-  width: 10em;
+  width: 11em;
   li {
     display: inline-block;
     font-size: 0.7em;
@@ -30,4 +31,10 @@ $paleblue: #d3e2e5;
     font-size: 3em;
     line-height: 1;
   }
+}
+
+.question-sort {
+  display: inline-block;
+  float: right;
+  margin-top: 5em;
 }
