@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150409191201) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "body"
+    t.boolean  "best"
     t.integer  "user_id"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
@@ -62,7 +63,6 @@ ActiveRecord::Schema.define(version: 20150409191201) do
 
   create_table "votes", force: :cascade do |t|
     t.integer  "direction"
-    t.boolean  "best"
     t.integer  "user_id"
     t.integer  "votable_id"
     t.string   "votable_type"
