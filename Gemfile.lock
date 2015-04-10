@@ -62,8 +62,11 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.5.0)
+    fabrication (2.12.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     globalid (0.3.4)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -187,7 +190,9 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  fabrication
   factory_girl
+  faker
   jbuilder (~> 2.0)
   jquery-rails
   pg
