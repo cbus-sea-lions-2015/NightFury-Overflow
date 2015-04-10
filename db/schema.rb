@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150409191201) do
 
   create_table "votes", force: :cascade do |t|
     t.integer  "direction"
+    t.boolean  "best"
     t.integer  "user_id"
     t.integer  "votable_id"
     t.string   "votable_type"
