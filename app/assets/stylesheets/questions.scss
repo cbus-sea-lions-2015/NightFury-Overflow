@@ -6,6 +6,7 @@ $yellow: #f0e958;
 
 .questions-list {
   list-style-type: none;
+  padding: 0;
   li {
     position: relative;
   }
@@ -33,6 +34,7 @@ $yellow: #f0e958;
     line-height: 1;
   }
 }
+
 
 .question-page {
   margin-left: -5.5em;
@@ -80,3 +82,10 @@ input.up {
 input.up:hover {
   border-bottom-color: $yellow;
 }
+
+.question-sort {
+  display: inline-block;
+  float: right;
+  margin-top: 5em;
+}
+
