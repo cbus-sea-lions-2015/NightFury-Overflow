@@ -7,10 +7,9 @@
   <% end %>
 
 <p> <%= simple_format(@question.body) %> </p>
+
 <p class="meta">by <%= @question.user.name %> on <%= @question.created_at.strftime("%B %d, %Y") %> | <%= link_to "Edit" , edit_question_path(@question) %></p>
 <hr>
-
-
 
 <!-- partial for showing question comments -->
 <% @question.comments.each do |comment| %>
