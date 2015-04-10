@@ -17,6 +17,11 @@
 <hr>
 <% @question.answers.each do |answer| %>
   <%= render 'answers/show', answer: answer %>
+
+  <div class="votes">
+    Votes 
+  </div>
+  
   <!-- partial for showing answer vote form -->
   <% if logged_in? %>
     <%= render partial: 'votes/form', locals: {form_path: question_answer_votes_path(@question,answer)} %>
