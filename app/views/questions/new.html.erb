@@ -1,9 +1,3 @@
 <h1>Ask a question</h1>
 
-<%= form_for @question do |f| %>
-  <p><%= f.label :title, "Title" %>
-  <%= f.text_field :title %> </p>
-  <p><%= f.label :body, "Content" %>
-  <%= f.text_area :body %></p>
-  <%= f.submit :disable_with => 'Submitting...' %>
-<% end %>
+<%= render 'form' %>
