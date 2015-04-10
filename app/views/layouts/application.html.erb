@@ -9,9 +9,7 @@
 </head>
 <body>
   <nav>
-    <%= link_to "Questions", root_path, class: "button" %>
     <% if session[:user_id] %>
-      <%= link_to "Ask Question", new_question_path, class: "button" %>
       <%= link_to "My Account", profile_path, class: "button" %>
       <%= link_to "Log Out", logout_path, class: "button" %>
     <% else %>
@@ -21,7 +19,13 @@
   </nav>
   <div class="container">
     <header>
-      <%= image_tag('nightfury.jpg') %><h1 class="logo-text"><span class="logo-light">NightFury</span><span class="logo-heavy">Overflow</span></h1>
+      <a href="/" title="home"><%= image_tag('nightfury.jpg') %><h1 class="logo-text"><span class="logo-light">NightFury</span><span class="logo-heavy">Overflow</span></h1></a>
+      <div class="question-buttons">
+        <%= link_to "Questions", root_path, class: "button" %>
+        <% if session[:user_id] %>
+          <%= link_to "Ask Question", new_question_path, class: "button" %>
+        <% end %>
+      </div>
     </header>
     <%= yield %>
     <footer>

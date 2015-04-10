@@ -47,6 +47,18 @@ nav {
 
 header {
   margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+header a {
+  border: 0;
+  color: $black;
+}
+
+header .question-buttons {
+  display: inline-block;
+  float: right;
+  margin-top: 4.6em;
 }
 
 footer {
