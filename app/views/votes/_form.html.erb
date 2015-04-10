@@ -1,0 +1,12 @@
+<% @vote = Vote.new %>
+<% targets = answer ? [@question, answer, @vote] : [@question, @vote] %>
+<% reply_to = answer ? "answer" : "question" %>
+<% form_for targets do |f| %>
+  <fieldset>
+    <%= radio_button_tag(:direction, 1) %>
+    <%= label_tag(:direction, "+1") %>
+    <%= radio_button_tag(:direction, -1) %>
+    <%= label_tag(:direction, "-1") %>
+  </fieldset>
+  <%= f.submit "Vote", :disable_with => 'Voting...' %>
+<% end %>

@@ -2,13 +2,24 @@
 <p class="meta"><%= @question.user.name %> on <%= @question.created_at.strftime("%B %d, %Y") %> | <%= link_to "Edit" , edit_question_path(@question) %></p>
 <p> <%= simple_format(@question.body) %> </p>
 
+<!-- partial for showing question vote form -->
+<% if logged_in? %>
+  <%= render 'votes/form', vote: Vote.new, answer: nil %>
+<% end %>
+
 <!-- partial for showing question comments -->
 <% @question.comments.each do |comment| %>
   <%= render 'comments/show', comment: comment %>
 <% end %>
 
 <% @question.answers.each do |answer| %>
-  <%= render 'answer/show', answer: answer %>
+  <%= render 'answers/show', answer: answer %>
+
+  <!-- partial for showing answer vote form -->
+  <% if logged_in? %>
+    <%= render :partial => 'votes/form', :locals => {:answer => answer} %>
+  <% end %>
+
   <!-- partial for showing Answer comments -->
   <% answer.comments.each do |comment| %>
     <%= render 'comments/show', comment: comment %>
