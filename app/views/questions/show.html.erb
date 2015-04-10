@@ -1,5 +1,5 @@
 <h1>  <%= @question.title %> </h1>
-<p class="meta"><%= @question.user.name %> on <%= @question.created_at.strftime("%B %d, %Y") %></p>
+<p class="meta"><%= @question.user.name %> on <%= @question.created_at.strftime("%B %d, %Y") %> | <%= link_to "Edit" , edit_question_path(@question) %></p>
 <p> <%= simple_format(@question.body) %> </p>
 
 <!-- partial for showing question comments -->

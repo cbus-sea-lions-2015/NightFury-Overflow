@@ -9,7 +9,9 @@
 </head>
 <body>
   <nav>
+    <%= link_to "Questions", root_path, class: "button" %>
     <% if session[:user_id] %>
+      <%= link_to "Ask Question", new_question_path, class: "button" %>
       <%= link_to "My Account", profile_path, class: "button" %>
       <%= link_to "Log Out", logout_path, class: "button" %>
     <% else %>
