@@ -23,9 +23,18 @@
 <hr>
 <% @question.answers.each do |answer| %>
   <!-- partial for showing answer vote buttons -->
- <% if logged_in? %>
+  <% if logged_in? %>
     <%= render partial: 'votes/form', locals: {form_path: question_answer_votes_path(@question,answer), answer: answer} %>
+
+  <% if @question.user == current_user %>
+      <%= button_to "Best", set_best_path, class: "best-answer-button", method: 'post', params: {answer: answer, best: true} %>
+    <% end %>
   <% end %>
+    
+  <% if answer.best %>
+    <div class="best-answer"></div>
+  <% end %>    
+
   <%= render 'answers/show', answer: answer %>
 
   <!-- partial for showing Answer comments -->
@@ -33,7 +42,6 @@
     <%= render 'comments/show', comment: comment %>
   <% end %>
 
-<hr>
   <% if logged_in? %>
   <%= render :partial => 'comments/form', :locals => {:answer => answer} %>
   <% end %>
