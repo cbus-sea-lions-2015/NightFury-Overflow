@@ -11,9 +11,6 @@
 <% if logged_in? %>
 <%= render 'comments/form', comment: Comment.new, answer: nil %>
 <% end %>
-<% if logged_in? %>
-  <%= render 'answers/new' %>
-<% end %>
 <h3>Answers</h3>
 <hr>
 <% @question.answers.each do |answer| %>
@@ -26,4 +23,8 @@
   <% if logged_in? %>
   <%= render :partial => 'comments/form', :locals => {:answer => answer} %>
   <% end %>
+<% end %>
+<!-- Add answer form -->
+<% if logged_in? %>
+  <%= render 'answers/new' %>
 <% end %>
