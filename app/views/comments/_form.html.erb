@@ -6,5 +6,5 @@
     <%= f.label :body, "Comment on this #{reply_to}" %>
     <%= f.text_area :body, autofocus: true %>
   </fieldset>
-  <%= f.submit "Reply", :disable_with => 'Submiting...' %>
+  <%= f.submit "Reply", class: "small", :disable_with => 'Submiting...' %>
 <% end %>
