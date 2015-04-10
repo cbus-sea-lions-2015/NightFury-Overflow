@@ -1,7 +1,10 @@
-<% form_for @comment do |f| -%>
+<% @comment = Comment.new %>
+<% targets = answer ? [@question, answer, @comment] : [@question, @comment] %>
+<% reply_to = answer ? "answer" : "question" %>
+<%= form_for targets do |f| %>
   <fieldset>
-    <%= f.label :body, "Body" %>
-    <%= f.text_area :body, autofocus: true, value: @comment.body %>
+    <%= f.label :body, "Comment on this #{reply_to}" %>
+    <%= f.text_area :body, autofocus: true %>
   </fieldset>
-  <%= f.submit, :disable_with => 'Submiting...' %>
-<% end -%>
+  <%= f.submit "Reply", :disable_with => 'Submiting...' %>
+<% end %>
