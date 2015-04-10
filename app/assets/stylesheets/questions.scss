@@ -1,3 +1,33 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$paleblue: #d3e2e5;
+.questions-list {
+  list-style-type: none;
+  li {
+    position: relative;
+  }
+}
+.question-stats {
+  color: darken($paleblue,25%);
+  list-style-type: none;
+  margin: 0;
+  margin-right: 1em;
+  margin-top: 0.4em;
+  padding: 0;
+  position: absolute;
+  right: 100%;
+  overflow: auto;
+  width: 8em;
+  li {
+    display: inline-block;
+    font-size: 0.7em;
+    text-align: center;
+    margin-left: 1em;
+  }
+  span {
+    display: block;
+    font-size: 3em;
+    line-height: 1;
+  }
+}
