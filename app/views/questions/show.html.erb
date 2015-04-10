@@ -12,7 +12,9 @@
 <%= render 'comments/form', comment: Comment.new, answer: nil %>
 <% end %>
 <h4>Answers</h4>
-<%= render 'answers/new' %>
+<% if logged_in? %>
+  <%= render 'answers/new' %>
+<% end %>
 <hr>
 <% @question.answers.each do |answer| %>
   <%= render 'answers/show', answer: answer %>
