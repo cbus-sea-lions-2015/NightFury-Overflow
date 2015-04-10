@@ -1,0 +1,6 @@
+<% @answer = Answer.new %>
+<%= form_for [@question, @answer] do |f| %>
+  <%= f.label :body, "Answer this question" %>
+  <%= f.text_area :body %>
+  <%= f.submit "Add answer", :disable_with => 'Add answering...' %>
+<% end %>
