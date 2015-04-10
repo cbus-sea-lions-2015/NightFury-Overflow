@@ -2,11 +2,11 @@
   <p id="notice"><%= notice %></p>
   <p class="comment-body"><%= comment.body %></p>
   <p class="meta">
-    <%= comment.user.name %> on <%= comment.created_at.strftime("%B %d, %Y") %>
+    by <%= comment.user.name %> on <%= comment.created_at.strftime("%B %d, %Y") %>
     <% if comment.user == current_user && comment.commentable_type == "Answer" %>
-      <%= link_to "Delete", question_answer_comment_path(@question.id,comment.commentable_id, comment), method: :delete, data: { confirm: 'Are you sure?'} %>
-    <% else %>
-      <%= link_to "Delete", question_comment_path(comment.commentable_id, comment), method: :delete, data: { confirm: 'Are you sure?'} %>
+      | <%= link_to "Delete", question_answer_comment_path(@question.id,comment.commentable_id, comment), method: :delete, data: { confirm: 'Are you sure?'} %>
+    <% elsif comment.user == current_user %>
+      | <%= link_to "Delete", question_comment_path(comment.commentable_id, comment), method: :delete, data: { confirm: 'Are you sure?'} %>
     <% end %>
   </p>
 </div>
